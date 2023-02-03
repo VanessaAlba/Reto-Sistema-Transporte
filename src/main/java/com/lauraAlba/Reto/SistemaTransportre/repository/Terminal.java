@@ -14,10 +14,7 @@ public class Terminal {
 
     public Terminal() {
         misVehiculos();
-    }
-
-    public void agregarVehiculo(Vehiculo vehiculoEntrada){
-        listaVehiculos.add(vehiculoEntrada);
+        misDestinos();
     }
 
     private void misVehiculos(){
@@ -30,9 +27,31 @@ public class Terminal {
                 new Aerovan("6")
         ));
     }
-
     private  void misDestinos(){
+        listaDestinos = new ArrayList<>(List.of(
+                new Destino("1","Bogota"),
+                new Destino("2","Fusa"),
+                new Destino("3","Melgar"),
+                new Destino("4","Girardot")
+        ));
 
     }
+    public List<Vehiculo> getVehiculos(){
+        return  listaVehiculos;
+    }
+    public void agregarVehiculo(Vehiculo vehiculoEntrada){
+
+        listaVehiculos.add(vehiculoEntrada);
+    }
+
+    public List<Destino> getDestinos(){
+        return listaDestinos;
+    }
+
+    public void agregarDestino(Destino nuevoDestino){
+        listaDestinos.add(nuevoDestino);
+    }
+
+
 
 }
