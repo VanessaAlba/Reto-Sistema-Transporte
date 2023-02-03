@@ -1,8 +1,7 @@
 package com.lauraAlba.Reto.SistemaTransportre.Controller;
 
-import com.lauraAlba.Reto.SistemaTransportre.repository.modelos.Aerovan;
 import com.lauraAlba.Reto.SistemaTransportre.repository.modelos.Bus;
-import com.lauraAlba.Reto.SistemaTransportre.service.IVehiculosService;
+import com.lauraAlba.Reto.SistemaTransportre.service.IBusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("vehiculo")
-public class VehiculoController {
+public class BusController {
 
     @Autowired
-    private IVehiculosService vehiculo;
+    private IBusService vehiculo;
 
     @GetMapping("/listar")
     public ResponseEntity obtenerVehiculos() {
@@ -26,9 +25,4 @@ public class VehiculoController {
         return new ResponseEntity(nuevoBus,HttpStatus.ACCEPTED);
     }
 
-    @PostMapping("/agregar/aerovan")
-    public ResponseEntity agregarAerovan(@RequestBody Aerovan nuevoAerovan) {
-        vehiculo.agregarAerovan(nuevoAerovan);
-        return new ResponseEntity(nuevoAerovan,HttpStatus.CREATED);
-    }
 }

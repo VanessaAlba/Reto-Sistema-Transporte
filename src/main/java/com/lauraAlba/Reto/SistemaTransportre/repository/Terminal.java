@@ -7,23 +7,25 @@ import java.util.ArrayList;
 import java.util.List;
 @Repository
 public class Terminal {
-    private List<Vehiculo> listaVehiculos;
+    private List<Bus> listaBuses;
     private List<Destino> listaDestinos;
 
     private List<Viaje> listaViajes;
+    private List<Pasajero> listaPasajeros;
 
     public Terminal() {
-        misVehiculos();
+        misBuses();
         misDestinos();
         misViajes();
+        misPasajeros();
     }
 
-    public List<Vehiculo> getVehiculos(){
-        return  listaVehiculos;
+    public List<Bus> getVehiculos(){
+        return  listaBuses;
     }
-    public void agregarVehiculo(Vehiculo vehiculoEntrada){
+    public void agregarVehiculo(Bus vehiculoEntrada){
 
-        listaVehiculos.add(vehiculoEntrada);
+        listaBuses.add(vehiculoEntrada);
     }
 
     public List<Destino> getDestinos(){
@@ -42,14 +44,19 @@ public class Terminal {
         this.listaViajes.add(nuevoViaje);
     }
 
-    private void misVehiculos(){
-        listaVehiculos = new ArrayList<>(List.of(
+    public List<Pasajero> getPasajeros() {
+        return listaPasajeros;
+    }
+
+    public void agregarPasajero(Pasajero nuevoPasajero) {
+        this.listaPasajeros.add(nuevoPasajero);
+    }
+
+    private void misBuses(){
+        listaBuses = new ArrayList<>(List.of(
                 new Bus("1",30,30),
                 new Bus("2",30,30),
-                new Bus("3",30,30),
-                new Aerovan("4",15,15),
-                new Aerovan("5",15,15),
-                new Aerovan("6",15,15)
+                new Bus("3",30,30)
         ));
     }
     private  void misDestinos(){
@@ -61,7 +68,6 @@ public class Terminal {
         ));
 
     }
-
     private void misViajes() {
         listaViajes = new ArrayList<>(List.of(
                 new Viaje("1", new Destino("1", "Bogota"), "03-02-2021", "10:00", new Bus("1", 0, 30)),
@@ -69,7 +75,13 @@ public class Terminal {
         ));
     }
 
-
-
+    private void misPasajeros() {
+        listaPasajeros = new ArrayList<>(List.of(
+                new Pasajero("123", "Laura"),
+                new Pasajero("345", "Vivian"),
+                new Pasajero("678", "Stephany"),
+                new Pasajero("491", "Sofia")
+        ));
+    }
 
 }

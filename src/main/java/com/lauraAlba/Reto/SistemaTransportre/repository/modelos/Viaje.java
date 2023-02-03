@@ -9,10 +9,10 @@ public class Viaje {
     private Destino destino;
     private String fecha;
     private String hora;
-    private Vehiculo vehiculo;
+    private Bus vehiculo;
 
 
-    public Viaje(String numeroViaje,Destino destino, String fecha, String hora, Vehiculo vehiculo) {
+    public Viaje(String numeroViaje,Destino destino, String fecha, String hora, Bus vehiculo) {
         this.numeroViaje= numeroViaje;
         this.destino = destino;
         this.fecha = fecha;
@@ -53,11 +53,11 @@ public class Viaje {
         this.hora = hora;
     }
 
-    public Vehiculo getVehiculo() {
+    public Bus getVehiculo() {
         return vehiculo;
     }
 
-    public void setVehiculo(Vehiculo vehiculo) {
+    public void setVehiculo(Bus vehiculo) {
         this.vehiculo = vehiculo;
     }
 
