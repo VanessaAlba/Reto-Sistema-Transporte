@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Viaje {
+    private String numeroViaje;
     private List<Ticket> pasajes;
     private Destino destino;
     private String fecha;
@@ -11,12 +12,21 @@ public class Viaje {
     private Vehiculo vehiculo;
 
 
-    public Viaje(Destino destino, String fecha, String hora, Vehiculo vehiculo) {
+    public Viaje(String numeroViaje,Destino destino, String fecha, String hora, Vehiculo vehiculo) {
+        this.numeroViaje= numeroViaje;
         this.destino = destino;
         this.fecha = fecha;
         this.hora = hora;
         this.vehiculo = vehiculo;
         this.pasajes = new ArrayList<>();
+    }
+
+    public String getNumeroViaje() {
+        return numeroViaje;
+    }
+
+    public void setNumeroViaje(String numeroViaje) {
+        this.numeroViaje = numeroViaje;
     }
 
     public Destino getDestino() {
