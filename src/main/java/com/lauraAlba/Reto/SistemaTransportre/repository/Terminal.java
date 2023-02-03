@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 @Repository
 public class Terminal {
     private List<Bus> listaBuses;
@@ -40,12 +43,31 @@ public class Terminal {
         return listaViajes;
     }
 
+    public Viaje getViaje(String idViaje) {
+        Viaje viajeResultante = null;
+        Stream<Viaje> filtrado = listaViajes.stream().filter(viaje -> viaje.getNumeroViaje().equals(idViaje));
+        List<Viaje> resultadoViaje = filtrado.collect(Collectors.toList());
+        if (resultadoViaje.size() > 0) {
+            viajeResultante = resultadoViaje.get(0);
+        }
+        return viajeResultante;
+    }
+
     public void agregarViaje(Viaje nuevoViaje){
         this.listaViajes.add(nuevoViaje);
     }
 
     public List<Pasajero> getPasajeros() {
         return listaPasajeros;
+    }
+    public Pasajero getPasajero(String cedula) {
+        Pasajero pasajeroResultante = null;
+        Stream<Pasajero> filtrado = listaPasajeros.stream().filter(pasajero -> pasajero.getCedula().equals(cedula));
+        List<Pasajero> resultadoPasajero = filtrado.collect(Collectors.toList());
+        if (resultadoPasajero.size() > 0) {
+            pasajeroResultante = resultadoPasajero.get(0);
+        }
+        return pasajeroResultante;
     }
 
     public void agregarPasajero(Pasajero nuevoPasajero) {
