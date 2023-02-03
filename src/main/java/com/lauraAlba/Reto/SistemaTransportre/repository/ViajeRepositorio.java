@@ -1,10 +1,11 @@
 package com.lauraAlba.Reto.SistemaTransportre.repository;
 
 import com.lauraAlba.Reto.SistemaTransportre.repository.modelos.Viaje;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public class ViajeRepositorio {
     private List<Viaje> viajes;
 

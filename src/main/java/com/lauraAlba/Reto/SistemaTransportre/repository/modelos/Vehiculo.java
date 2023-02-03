@@ -6,8 +6,10 @@ public class Vehiculo {
     private int puestosDisposibles;
 
 
-    public Vehiculo(String placa) {
+    public Vehiculo(String placa, int cantidadPasajeros, int puestosDisposibles) {
         this.placa = placa;
+        this.cantidadPasajeros = cantidadPasajeros;
+        this.puestosDisposibles = puestosDisposibles;
     }
 
     public String getPlaca() {
